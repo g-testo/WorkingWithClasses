@@ -3,20 +3,19 @@ package com.gt;
 public class WorkingWithClasses {
     public static void main(String[] args){
 
-        Person greg = new Person("Greg", 21, "04-10-1980", true, "000-00-0000");
+        Person greg = new Person(
+                "Gregory",
+                21,
+                "04-10-1980",
+                true,
+                "000-00-0000"
+        );
 
-        System.out.println(greg.getName());
+        greg.goForARun();
 
-        greg.setName("Gregory");
-//        greg.name = "Greg";
-//        greg.age = 21;
-//        greg.birthday = "04-10-1980";
-//        greg.hasTattoo = true;
+        greg.eat();
 
-        System.out.println(greg.getName());
-
-//        Person braynel = new Person();
-//        braynel.name = "Braynel";
+        System.out.println(greg.getEnergy());
 
 
     }
@@ -29,6 +28,8 @@ class Person {
     private String birthday;
     private boolean hasTattoo;
     private String ssn;
+    private int energy;
+
 
     // Constructor method
     public Person(String name, int age, String birthday, boolean hasTattoo, String ssn){
@@ -37,14 +38,58 @@ class Person {
         this.birthday = birthday;
         this.hasTattoo = hasTattoo;
         this.ssn = ssn;
+        this.energy = 100;
     }
 
-    // Methods- Getters and Setters
-    public String getName(){
-        return this.name;
+    public String getName() {
+        return name;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public boolean isHasTattoo() {
+        return hasTattoo;
+    }
+
+    public void setHasTattoo(boolean hasTattoo) {
+        this.hasTattoo = hasTattoo;
+    }
+
+    public String getSsn() {
+        return ssn;
+    }
+
+    public void setSsn(String ssn) {
+        this.ssn = ssn;
+    }
+
+    public int getEnergy() {
+        return energy;
+    }
+
+    public void goForARun(){
+        this.energy -= 60;
+    }
+
+    public void eat(){
+        this.energy += 30;
     }
 }
