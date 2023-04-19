@@ -2,7 +2,6 @@ package com.gt;
 
 public class WorkingWithClasses {
     public static void main(String[] args){
-
         Person greg = new Person(
                 "Gregory",
                 21,
@@ -10,13 +9,15 @@ public class WorkingWithClasses {
                 true,
                 "000-00-0000"
         );
-
         greg.goForARun();
-
         greg.eat();
-
         System.out.println(greg.getEnergy());
 
+        Person kossi = new Person();
+
+        Person isaiah = new Person("Isaiah");
+
+        Person seolah = new Person(false);
 
     }
 }
@@ -31,7 +32,18 @@ class Person {
     private int energy;
 
 
-    // Constructor method
+    // Constructor methods
+
+    public Person(){}
+
+    public Person(String name){
+        this.name = name;
+    }
+
+    public Person(boolean hasTattoo){
+        this.hasTattoo = hasTattoo;
+    }
+
     public Person(String name, int age, String birthday, boolean hasTattoo, String ssn){
         this.name = name;
         this.age = age;
@@ -89,7 +101,17 @@ class Person {
         this.energy -= 60;
     }
 
+    public void goForARun(int milesRan) {
+        this.energy -= milesRan*10;
+    }
+
     public void eat(){
         this.energy += 30;
     }
 }
+//
+//map.getDirections("123 Center blvd, Saltlake, UT 39393");
+//
+//map.getDirections(2.348438484, 4.39348484);
+
+
